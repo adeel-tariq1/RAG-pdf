@@ -17,22 +17,21 @@ pygments==2.19.2
 
 
 #USAGE
-streamlit → For your web app interface.
+#streamlit → For your web app interface.
 
-pypdf → To read PDF files.
+#pypdf → To read PDF files.
 
-sentence-transformers → For creating embeddings.
+#sentence-transformers → For creating embeddings.
 
-chromadb → Vector store for retrieval.
+#chromadb → Vector store for retrieval.
 
-langchain and LLM connectors → For RAG orchestration:
-langchain-groq → Groq LLM
-langchain-openai → OpenAI LLM
-langchain-google-genai → Gemini LLM
+#langchain and LLM connectors → For RAG orchestration:
+#langchain-groq → Groq LLM
+#langchain-openai → OpenAI LLM
+#langchain-google-genai → Gemini LLM
 
-torch → Required by sentence-transformers.
+#torch → Required by sentence-transformers.
+#numpy → Required for embeddings.
 
-
-numpy → Required for embeddings.
 
 
