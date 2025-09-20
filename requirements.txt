@@ -1,26 +1,26 @@
-# CORRECTED requirements.txt
-# Let Streamlit manage its own dependencies. DO NOT PIN rich, pygments, etc.
+# requirements.txt
 
-# Core App - Pinned for stability
+# Force a modern version of SQLite for ChromaDB
+pysqlite3-binary
+
+# Core App
 streamlit==1.30.0
 
-# LangChain - Use modern, compatible versions. This is the key fix.
-langchain==0.1.16 # This is a NEWER version in the 0.1.x series
+# LangChain
+langchain==0.1.16
 langchain-community==0.0.34
 langchain-core==0.1.45
-
-# LangChain Integrations
 langchain-groq>=0.1.0
 langchain-openai>=0.1.0
 langchain-google-genai>=0.1.0
 
 # Embeddings and Vector Store
 sentence-transformers>=2.2.2
-chromadb==0.4.24 # A specific, known-compatible version
+chromadb==0.4.24
 
 # Document Processing
 pypdf==3.15.0
 
-# Core ML Libraries - Keep these flexible
+# Core ML
 torch>=2.0.0
 numpy>=1.24.0
