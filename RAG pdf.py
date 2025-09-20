@@ -1,3 +1,7 @@
+# MUST BE THE FIRST LINES IN YOUR SCRIPT
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import multiprocessing
 multiprocessing.set_start_method("spawn", force=True)
@@ -179,4 +183,5 @@ if query := st.chat_input("Ask a question about the PDF..."):
 if st.button("💾 Export Chat as TXT"):
     chat_text = "\n".join([f"{m['role'].upper()}: {m['content']}" for m in st.session_state.chat_history])
     st.download_button(" Download Chat", chat_text, file_name="chat_history.txt")
+
 
