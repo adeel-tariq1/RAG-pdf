@@ -10,7 +10,6 @@ from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate
 import time
 
-# ------------------- Functions -------------------
 
 def validate_api(provider, api_key):
     """Initialize and return the LLM based on the provider and API key."""
@@ -112,7 +111,7 @@ def stream_response(chain, context, query, answer_style):
     return text
 
 
-# ------------------- Sidebar -------------------
+# Sidebar -------------------
 st.markdown("""
 <style>
     section[data-testid="stSidebar"] .stMarkdown { margin-top: -30px; }
@@ -176,7 +175,8 @@ if query := st.chat_input("Ask a question about the PDF..."):
     response_text = stream_response(chain, context, query, answer_style)
     st.session_state.chat_history.append({"role": "assistant", "content": response_text})
 
-# ------------------- Export Chat -------------------
+#  Export Chat -------------------
 if st.button("💾 Export Chat as TXT"):
     chat_text = "\n".join([f"{m['role'].upper()}: {m['content']}" for m in st.session_state.chat_history])
     st.download_button(" Download Chat", chat_text, file_name="chat_history.txt")
+
