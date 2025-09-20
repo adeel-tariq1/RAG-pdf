@@ -1,25 +1,31 @@
-# Use the upgrade strategy to prevent downgrading Streamlit's core dependencies
---upgrade-strategy eager
+# FIRST, explicitly require the newer versions that Streamlit needs
+# This forces pip to prioritize these versions and not downgrade them.
+rich>=14.1.0
+markdown-it-py>=4.0.0
+pygments>=2.19.2
+mdurl>=0.1.2
 
-# Core App Framework - Pinned to a stable version
+# CORE APP
 streamlit==1.30.0
 
-# LangChain: Use newer, more stable versions. Avoid ancient v0.1.0.
-langchain>=0.1.0,<0.2.0  # Pins to the 0.1.x series, which is much newer than 0.1.0
-langchain-community>=0.0.10 # Essential for many integrations
+# LANGCHAIN & DEPS: Use modern, compatible versions.
+# Avoid the ancient v0.1.0 which is full of conflicts.
+langchain==0.1.16 # A much newer, stable 0.1.x release
+langchain-community==0.0.34
+langchain-core==0.1.45
 
-# LangChain Integrations - Use flexible versioning
+# LangChain Integrations - use compatible ranges
 langchain-groq>=0.1.0
 langchain-openai>=0.1.0
 langchain-google-genai>=0.1.0
 
-# Embeddings and Vector Store
+# EMBEDDINGS & VECTORSTORE
 sentence-transformers>=2.2.2
-chromadb>=0.4.0,<0.5.0  # Pins to a major version to avoid breaking changes
+chromadb==0.4.24 # Pinning a specific version of ChromaDB is often safe
 
-# Document Processing
-pypdf>=3.15.0
+# DOCUMENT PROCESSING
+pypdf==3.15.0
 
-# Core Numeric & ML Libraries - Keep these flexible to avoid conflicts
+# CORE ML
 torch>=2.0.0
 numpy>=1.24.0
