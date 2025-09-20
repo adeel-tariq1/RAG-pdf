@@ -1,4 +1,4 @@
---REQUIRED LIBRARIES--
+#REQUIRED LIBRARIES
 pip>=25.2
 streamlit==1.30.0
 pypdf==3.15.0
@@ -16,7 +16,7 @@ mdurl==0.1.2
 pygments==2.19.2
 
 
---USAGE--
+#USAGE
 streamlit → For your web app interface.
 
 pypdf → To read PDF files.
@@ -34,4 +34,5 @@ torch → Required by sentence-transformers.
 
 
 numpy → Required for embeddings.
+
 
