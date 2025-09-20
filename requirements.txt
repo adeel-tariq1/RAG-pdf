@@ -1,4 +1,5 @@
 --REQUIRED LIBRARIES--
+pip>=25.2
 streamlit==1.30.0
 pypdf==3.15.0
 sentence-transformers==2.2.2
@@ -33,3 +34,4 @@ torch → Required by sentence-transformers.
 
 
 numpy → Required for embeddings.
+
