@@ -1,5 +1,5 @@
 #REQUIRED LIBRARIES
-pip>=25.2
+pip install --upgrade pip
 streamlit==1.30.0
 pypdf==3.15.0
 sentence-transformers==2.2.2
@@ -32,6 +32,7 @@ pygments==2.19.2
 
 #torch → Required by sentence-transformers.
 #numpy → Required for embeddings.
+
 
 
 
