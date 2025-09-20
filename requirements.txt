@@ -1,36 +1,25 @@
-#REQUIRED LIBRARIES
-pip>=25.2
+# Use the upgrade strategy to prevent downgrading Streamlit's core dependencies
+--upgrade-strategy eager
+
+# Core App Framework - Pinned to a stable version
 streamlit==1.30.0
-pypdf==3.15.0
-sentence-transformers==2.2.2
-chromadb==0.4.0
-langchain==0.1.0
-langchain-groq==0.1.0
-langchain-openai==0.1.0
-langchain-google-genai==0.1.0
+
+# LangChain: Use newer, more stable versions. Avoid ancient v0.1.0.
+langchain>=0.1.0,<0.2.0  # Pins to the 0.1.x series, which is much newer than 0.1.0
+langchain-community>=0.0.10 # Essential for many integrations
+
+# LangChain Integrations - Use flexible versioning
+langchain-groq>=0.1.0
+langchain-openai>=0.1.0
+langchain-google-genai>=0.1.0
+
+# Embeddings and Vector Store
+sentence-transformers>=2.2.2
+chromadb>=0.4.0,<0.5.0  # Pins to a major version to avoid breaking changes
+
+# Document Processing
+pypdf>=3.15.0
+
+# Core Numeric & ML Libraries - Keep these flexible to avoid conflicts
 torch>=2.0.0
 numpy>=1.24.0
-
-
-
-#USAGE
-#streamlit → For your web app interface.
-
-#pypdf → To read PDF files.
-
-#sentence-transformers → For creating embeddings.
-
-#chromadb → Vector store for retrieval.
-
-#langchain and LLM connectors → For RAG orchestration:
-#langchain-groq → Groq LLM
-#langchain-openai → OpenAI LLM
-#langchain-google-genai → Gemini LLM
-
-#torch → Required by sentence-transformers.
-#numpy → Required for embeddings.
-
-
-
-
-
